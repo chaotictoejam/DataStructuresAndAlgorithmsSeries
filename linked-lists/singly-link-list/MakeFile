@@ -1,0 +1,7 @@
+CXX=g++ #Sets compiler
+CXXFLAGS = -std=c++0x -Wall
+DEPS = node.h singlylinkedlist.h
+OBJECTS  = singlylinkedlist.o test.o
+
+main: $(OBJECTS)
+	$(CXX) $(CXXFLAGS) -o $@ $^
