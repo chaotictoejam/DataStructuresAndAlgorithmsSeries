@@ -1,0 +1,7 @@
+CXX=g++ #Sets compiler
+CXXFLAGS = -std=c++0x -Wall
+DEPS = node.h doublylinkedlist.h
+OBJECTS  = doublylinkedlist.o test.o
+
+main: $(OBJECTS)
+	$(CXX) $(CXXFLAGS) -o $@ $^

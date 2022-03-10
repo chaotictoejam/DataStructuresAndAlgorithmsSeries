@@ -4,12 +4,12 @@
 //    ./main
 
 #include <iostream>
-#include "singlylinkedlist.h"
+#include "doublylinkedlist.h"
 
 using namespace std;
 
 int main() {
-    SinglyLinkedList<int> list;
+    DoublyLinkedList<int> list;
 
     cout << (list.head == NULL) << endl;
 
@@ -34,4 +34,4 @@ int main() {
     list.Search(2);
 }
 
-template class SinglyLinkedList<int>;
+template class DoublyLinkedList<int>;
