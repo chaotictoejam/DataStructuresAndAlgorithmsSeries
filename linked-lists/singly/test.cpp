@@ -24,6 +24,10 @@ int main() {
     list.Insert(3);
     
     list.PrintList();
+    
+    list.Reverse();
+    
+    list.PrintList();
 
     list.Search(2);
 

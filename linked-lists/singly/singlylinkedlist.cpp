@@ -83,6 +83,24 @@ void SinglyLinkedList<T>:: Search(T data){
     }
 } 
 
+// O(n)
+template<class T>
+void SinglyLinkedList<T>:: Reverse(){
+    Node<T> *current = head;
+    Node<T> *prev = NULL;
+    Node<T> *next = NULL;
+
+    while(current != NULL) {
+        next = current->next; // Storing next node to go to
+        current->next = prev; // Reversing our pointers
+
+        // Moving our pointers ahead
+        prev = current;
+        current = next;
+    }
+
+    head = prev;
+}
 
 // Prints contents of this list
 template<class T>

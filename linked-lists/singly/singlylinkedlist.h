@@ -17,6 +17,7 @@ class SinglyLinkedList{
         void Delete(Node<T> *n);
         void Search(T data);
         void PrintList();
+        void Reverse();
 };
 
 #endif
