@@ -85,15 +85,18 @@ Node* BinaryTree::search(int value, Node *leaf) {
             return leaf;
         }
         if(value < leaf->value){
+            // Traverse down the left side of the tree
             return search(value, leaf->left);
         } else
         {
+            // Traverse down the right side of the tree
             return search(value, leaf->right);
         }
     }
 }
 
 void BinaryTree::deleteNode(int value) {
+    // The roo could potentially change and therefore may need to be updated
     root = deleteNode(value, root);
 }
 
