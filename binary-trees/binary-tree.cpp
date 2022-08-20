@@ -23,12 +23,18 @@ class BinaryTree {
     void deleteNode(int value);
     Node* search(int value);
     void printLevelOrder();
-
+    void printInorder();
+    void printPreorder();
+    void printPostorder();
+    
    private:
     void destroy(Node* leaf);
     void insert(int value, Node* leaf);
     Node* search(int value, Node* leaf);
     Node* deleteNode(int value, Node* leaf);
+    void printInorder(Node* leaf);
+    void printPreorder(Node* leaf);
+    void printPostorder(Node* leaf);
     Node* root;
 };
 
@@ -169,6 +175,45 @@ void BinaryTree::printLevelOrder() {
     }
 }
 
+void BinaryTree::printInorder() {
+    printInorder(root);
+    cout << endl;
+}
+
+void BinaryTree::printInorder(Node* leaf) {
+    if(leaf != NULL) {
+        printInorder(leaf->left);
+        cout << leaf->value << " ";
+        printInorder(leaf->right);
+    }
+}
+
+void BinaryTree::printPreorder() {
+    printPreorder(root);
+    cout << endl;
+}
+
+void BinaryTree::printPreorder(Node* leaf) {
+    if(leaf != NULL) {
+        cout << leaf->value << " ";
+        printPreorder(leaf->left);
+        printPreorder(leaf->right);
+    }
+}
+
+void BinaryTree::printPostorder() {
+    printPostorder(root);
+    cout << endl;
+}
+
+void BinaryTree::printPostorder(Node* leaf) {
+    if(leaf != NULL) {
+        printPostorder(leaf->left);
+        printPostorder(leaf->right);
+        cout << leaf->value << " ";
+    }
+}
+
 int main() {
     BinaryTree* tree = new BinaryTree();
 
@@ -183,4 +228,7 @@ int main() {
     tree->insert(9);
 
     tree->printLevelOrder();
+    tree->printInorder();
+    tree->printPreorder();
+    tree->printPostorder();
 }
