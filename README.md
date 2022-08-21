@@ -20,4 +20,5 @@ Please check out the series here: https://youtube.com/playlist?list=PLaBPUIXZ8s4
 * Queues - https://youtu.be/j4WhaCXQCHg
 * Binary Trees
     * Introduction to Binary Trees - https://youtu.be/Hmnom6F3m88
-    * Implementing a Binary Trees - https://youtu.be/3t89qAMlvcs 
+    * Implementing a Binary Trees - https://youtu.be/3t89qAMlvcs
+    * Implementing Tree Traversals - https://youtu.be/Wyt1359_djA
