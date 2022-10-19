@@ -26,6 +26,7 @@ class BinaryTree {
     void printInorder();
     void printPreorder();
     void printPostorder();
+    void mirror();
     
    private:
     void destroy(Node* leaf);
@@ -35,6 +36,7 @@ class BinaryTree {
     void printInorder(Node* leaf);
     void printPreorder(Node* leaf);
     void printPostorder(Node* leaf);
+    void mirror(Node* leaf);
     Node* root;
 };
 
@@ -214,21 +216,37 @@ void BinaryTree::printPostorder(Node* leaf) {
     }
 }
 
+void BinaryTree::mirror() {
+    mirror(root);
+}
+
+void BinaryTree::mirror(Node* leaf) {
+    if(leaf == NULL) {
+        return;
+    } else {
+        mirror(leaf->left);
+        mirror(leaf->right);
+
+        Node* temp = leaf->left;
+        leaf->left = leaf->right;
+        leaf->right = temp;
+    }
+}
+
 int main() {
     BinaryTree* tree = new BinaryTree();
-
-    tree->printLevelOrder();
     
     tree->insert(5);
     tree->insert(3);
-    tree->insert(7);
-    tree->insert(1);
+    tree->insert(8);
+    tree->insert(2);
     tree->insert(4);
-    tree->insert(6);
+    tree->insert(7);
     tree->insert(9);
 
     tree->printLevelOrder();
-    tree->printInorder();
-    tree->printPreorder();
-    tree->printPostorder();
+    
+    tree->mirror();
+
+    tree->printLevelOrder();
 }
